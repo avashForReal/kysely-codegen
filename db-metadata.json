@@ -1,0 +1,1232 @@
+{
+    "enums": {
+        "enums": {
+            "public.scope": [
+                "individual",
+                "organization",
+                "superadmin"
+            ]
+        }
+    },
+    "tables": [
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "imageId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "eventId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "event_gallery",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "tagId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "eventId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "event_tags",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamp",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "createdAt"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamp",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "updatedAt"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamp",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "deletedAt"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "title"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "organizer"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "location"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "locationType"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "province"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "format"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "type"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "description"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "bannerImage"
+                },
+                {
+                    "comment": null,
+                    "dataType": "date",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "startDate"
+                },
+                {
+                    "comment": null,
+                    "dataType": "date",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "registrationDeadline"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "registrationLink"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "contactEmail"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "website"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "status"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "cost"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "socials"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "slug"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "contributedBy"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "events",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImageSourceId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "publicImage"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "gallery",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "imageId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "organizationId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "organization_gallery",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "tagId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "organizationId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "organization_tags",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "name"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "description"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "email"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "phoneNumber"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "province"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "city"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "country"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImageSourceId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImage"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "slug"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "organizations",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "title"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "decription"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImageSourceId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImage"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "sourceUrl"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "linkText"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "type"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "resource",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "json",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "data"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "userId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "eventId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "organizationId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "socials",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "tag"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "isUserTag"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "isOrganizationTag"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "isEventTag"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "isNewsTag"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "isOpportunityTag"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "tags",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "imageId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "userId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "user_gallery",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "tagId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "userId"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "user_tags",
+            "schema": "public"
+        },
+        {
+            "columns": [
+                {
+                    "comment": null,
+                    "dataType": "int4",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": true,
+                    "isNullable": false,
+                    "name": "id"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "bio"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "fullName"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "email"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "phoneNumber"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "gender"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "province"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "city"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "country"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "profession"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "expertise"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "affiliatedOrganization"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImageSourceId"
+                },
+                {
+                    "comment": null,
+                    "dataType": "text",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "publicImage"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "slug"
+                },
+                {
+                    "comment": null,
+                    "dataType": "scope",
+                    "dataTypeSchema": "public",
+                    "enumValues": [
+                        "individual",
+                        "organization",
+                        "superadmin"
+                    ],
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "scope"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "isEmailVerified"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "isActive"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "password"
+                },
+                {
+                    "comment": null,
+                    "dataType": "bool",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "requiresPasswordChange"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "resetPasswordToken"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamptz",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "resetPasswordExpiryTime"
+                },
+                {
+                    "comment": null,
+                    "dataType": "varchar",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "emailVerificationToken"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamptz",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": false,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": true,
+                    "name": "emailVerificationExpiryTime"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamptz",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "createdAt"
+                },
+                {
+                    "comment": null,
+                    "dataType": "timestamptz",
+                    "dataTypeSchema": "pg_catalog",
+                    "enumValues": null,
+                    "hasDefaultValue": true,
+                    "isArray": false,
+                    "isAutoIncrementing": false,
+                    "isNullable": false,
+                    "name": "updatedAt"
+                }
+            ],
+            "isPartition": false,
+            "isView": false,
+            "name": "users",
+            "schema": "public"
+        }
+    ]
+}

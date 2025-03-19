@@ -1,0 +1,14 @@
+[
+  "text",
+  "timestamptz",
+  "timestamp",
+  "numeric",
+  "citext",
+  "int4",
+  "bool",
+  "jsonb",
+  "varchar",
+  "float8",
+  "date",
+  "int8"
+]
