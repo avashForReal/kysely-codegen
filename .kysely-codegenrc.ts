@@ -1,6 +1,81 @@
-import fs from 'fs';
-import { Config } from './src/cli/config';
+import fs from 'node:fs';
+import type { Config } from './src/cli/config';
 import { toKyselyCamelCase } from './src/generator';
+import type { DatabaseMetadata } from './src/introspector';
+
+const typeMapping: Record<string, string> = {
+  'int2': 'z.number().int()',
+  'int4': 'z.number().int()',
+  'int8': 'z.number().int()',
+  'float4': 'z.number()',
+  'float8': 'z.number()',
+  'numeric': 'z.number()',
+  'character varying': 'z.string()',
+  'varchar': 'z.string()',
+  'text': 'z.string()',
+  'char': 'z.string()',
+  'boolean': 'z.boolean()',
+  'bool': 'z.boolean()',
+  'date': 'z.date()',
+  'timestamp': 'z.date()',
+  'timestamptz': 'z.date()',
+  'time': 'z.date()',
+  'timetz': 'z.date()',
+  'interval': 'z.unknown()',
+  'bytea': 'z.instanceof(Buffer)',
+  'json': 'z.unknown()',
+  'jsonb': 'z.unknown()',
+  'uuid': 'z.string().uuid()',
+  'cidr': 'z.string()',
+  'inet': 'z.string()',
+  'macaddr': 'z.string()',
+  'array': 'z.array(z.unknown())',
+  'enum': 'z.enum([/*enumValues*/])',
+  'point': 'z.tuple([z.number(), z.number()])',
+  'polygon': 'z.array(z.tuple([z.number(), z.number()]))',
+  'circle': 'z.tuple([z.number(), z.number(), z.number()])',
+};
+
+function generateSchemaTemplate(metadata: DatabaseMetadata): string {
+  let output = 'import { z } from "zod";\n\n';
+
+  for (const table of metadata.tables) {
+    const schemaName = toKyselyCamelCase(table.name);
+    output += `export const ${schemaName}Schema = z.object({\n`;
+
+    for (const column of table.columns) {
+      if (column.enumValues) {
+        output += `  ${column.name}: z.enum(${JSON.stringify(column.enumValues)}),\n`;
+      } else {
+        output += `  ${column.name}: ${typeMapping[column.dataType] || 'z.unknown()'},\n`;
+      }
+    }
+
+    output += '});\n\n';
+  }
+
+  return output;
+}
+
+function findAllColumnTypes(metadata: DatabaseMetadata): string[] {
+  const allcolumntypes: string[] = [];
+
+  for (const table of metadata.tables) {
+    for (const column of table.columns) {
+      if (!column.enumValues && !column.isArray) {
+        allcolumntypes.push(column.dataType);
+      }
+    }
+  }
+
+  return [...new Set(allcolumntypes)];
+}
+
+function generateFiles(metadata: DatabaseMetadata, schemaTemplate: string, allColumnTypes: string[]): void {
+  fs.writeFileSync('db-metadata.json', JSON.stringify(metadata, null, 4));
+  fs.writeFileSync('allcolumntypes.json', JSON.stringify(allColumnTypes, null, 4));
+  fs.writeFileSync('zod-schemas.ts', schemaTemplate);
+}
 
 const config: Config = {
   logLevel: 'debug',
@@ -9,99 +84,10 @@ const config: Config = {
   camelCase: true,
   serializer: {
     serializeFile: (metadata) => {
-      let output = 'import { z } from "zod";\n\n';
-
-      const allcolumntypes: string[] = [];
-
-      for (const table of metadata.tables) {
-        output += 'export const ';
-        output += toKyselyCamelCase(table.name);
-        output += 'Schema = z.object({\n';
-
-        for (const column of table.columns) {
-          if (!column.enumValues && !column.isArray) {
-            allcolumntypes.push(column.dataType);
-          }
-
-          output += '  ';
-          output += column.name;
-          output += ': ';
-          switch (column.dataType) {
-            case 'int2':
-            case 'int4':
-            case 'int8':
-              output += 'z.number().int()';
-              break;
-            case 'float4':
-            case 'float8':
-            case 'numeric':
-              output += 'z.number()';
-              break;
-            case 'character varying':
-            case 'varchar':
-            case 'text':
-            case 'char':
-              output += 'z.string()';
-              break;
-            case 'boolean':
-              output += 'z.boolean()';
-              break;
-            case 'date':
-            case 'timestamp':
-            case 'timestamptz':
-            case 'time':
-            case 'timetz':
-              output += 'z.date()';
-              break;
-            case 'interval':
-              output += 'z.unknown()';
-              break;
-            case 'bytea':
-              output += 'z.instanceof(Buffer)';
-              break;
-            case 'json':
-            case 'jsonb':
-              output += 'z.unknown()';
-              break;
-            case 'uuid':
-              output += 'z.string().uuid()';
-              break;
-            case 'cidr':
-            case 'inet':
-            case 'macaddr':
-              output += 'z.string()';
-              break;
-            case 'array':
-              output += 'z.array(z.unknown())';
-              break;
-            case 'enum':
-              output += `z.enum([/*enumValues*/])`;
-              break;
-            case 'point':
-              output += 'z.tuple([z.number(), z.number()])';
-              break;
-            case 'polygon':
-              output += 'z.array(z.tuple([z.number(), z.number()]))';
-              break;
-            case 'circle':
-              output += 'z.tuple([z.number(), z.number(), z.number()])';
-              break;
-            default:
-              output += 'z.unknown()';
-          }
-
-          output += ',\n';
-        }
-
-        output += '});\n\n';
-      }
-
-      fs.writeFileSync('db-metadata.json', JSON.stringify(metadata, null, 4));
-      fs.writeFileSync(
-        'allcolumntypes.json',
-        JSON.stringify([...new Set(allcolumntypes)], null, 4),
-      );
-      return output;
+      const schemaTemplate = generateSchemaTemplate(metadata);
+      const allColumnTypes = findAllColumnTypes(metadata);
+      generateFiles(metadata, schemaTemplate, allColumnTypes);
+      return schemaTemplate;
     },
   },
 };

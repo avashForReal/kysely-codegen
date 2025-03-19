@@ -819,28 +819,6 @@
                     "isAutoIncrementing": false,
                     "isNullable": false,
                     "name": "isEventTag"
-                },
-                {
-                    "comment": null,
-                    "dataType": "bool",
-                    "dataTypeSchema": "pg_catalog",
-                    "enumValues": null,
-                    "hasDefaultValue": true,
-                    "isArray": false,
-                    "isAutoIncrementing": false,
-                    "isNullable": false,
-                    "name": "isNewsTag"
-                },
-                {
-                    "comment": null,
-                    "dataType": "bool",
-                    "dataTypeSchema": "pg_catalog",
-                    "enumValues": null,
-                    "hasDefaultValue": true,
-                    "isArray": false,
-                    "isAutoIncrementing": false,
-                    "isNullable": false,
-                    "name": "isOpportunityTag"
                 }
             ],
             "isPartition": false,
