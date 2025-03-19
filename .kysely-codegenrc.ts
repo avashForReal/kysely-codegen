@@ -39,20 +39,29 @@ const typeMapping: Record<string, string> = {
 function generateSchemaTemplate(metadata: DatabaseMetadata): string {
   let output = 'import { z } from "zod";\n\n';
 
+  for (const [enumName, enumValues] of Object.entries(metadata.enums.enums)) {
+    const enumSchemaName = toKyselyCamelCase(enumName?.split('.')?.pop() ?? '');
+    output += `export const ${enumSchemaName}EnumSchema = z.enum(${JSON.stringify(enumValues)});\n\n`;
+  }
+
   for (const table of metadata.tables) {
     const schemaName = toKyselyCamelCase(table.name);
     output += `export const ${schemaName}Schema = z.object({\n`;
 
     for (const column of table.columns) {
+      const columnName = toKyselyCamelCase(column.name);
       if (column.enumValues) {
-        output += `  ${column.name}: z.enum(${JSON.stringify(column.enumValues)}),\n`;
+        const enumSchemaName = toKyselyCamelCase(column.dataType);
+        output += `  ${columnName}: ${enumSchemaName}EnumSchema,\n`;
       } else {
-        output += `  ${column.name}: ${typeMapping[column.dataType] || 'z.unknown()'},\n`;
+        output += `  ${columnName}: ${typeMapping[column.dataType] || 'z.unknown()'},\n`;
       }
     }
 
     output += '});\n\n';
   }
+
+  return output;
 
   return output;
 }

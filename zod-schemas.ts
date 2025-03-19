@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export const scopeEnumSchema = z.enum(["individual", "organization", "superadmin"]);
+
 export const eventGallerySchema = z.object({
   id: z.number().int(),
   imageId: z.number().int(),
@@ -125,7 +127,7 @@ export const usersSchema = z.object({
   publicImageSourceId: z.string(),
   publicImage: z.string(),
   slug: z.string(),
-  scope: z.enum(["individual","organization","superadmin"]),
+  scope: scopeEnumSchema,
   isEmailVerified: z.boolean(),
   isActive: z.boolean(),
   password: z.string(),
@@ -136,5 +138,6 @@ export const usersSchema = z.object({
   emailVerificationExpiryTime: z.date(),
   createdAt: z.date(),
   updatedAt: z.date(),
+  anotherScope: scopeEnumSchema,
 });
 
