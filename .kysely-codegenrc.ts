@@ -62,8 +62,6 @@ function generateSchemaTemplate(metadata: DatabaseMetadata): string {
   }
 
   return output;
-
-  return output;
 }
 
 function findAllColumnTypes(metadata: DatabaseMetadata): string[] {
