@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+export const scopeEnumSchema = z.enum(["individual", "organization", "superadmin"]);
+
 export const eventGallerySchema = z.object({
   id: z.number().int(),
   imageId: z.number().int(),
@@ -92,11 +94,9 @@ export const socialsSchema = z.object({
 export const tagsSchema = z.object({
   id: z.number().int(),
   tag: z.string(),
-  isUserTag: z.unknown(),
-  isOrganizationTag: z.unknown(),
-  isEventTag: z.unknown(),
-  isNewsTag: z.unknown(),
-  isOpportunityTag: z.unknown(),
+  isUserTag: z.boolean(),
+  isOrganizationTag: z.boolean(),
+  isEventTag: z.boolean(),
 });
 
 export const userGallerySchema = z.object({
@@ -127,16 +127,17 @@ export const usersSchema = z.object({
   publicImageSourceId: z.string(),
   publicImage: z.string(),
   slug: z.string(),
-  scope: z.unknown(),
-  isEmailVerified: z.unknown(),
-  isActive: z.unknown(),
+  scope: scopeEnumSchema,
+  isEmailVerified: z.boolean(),
+  isActive: z.boolean(),
   password: z.string(),
-  requiresPasswordChange: z.unknown(),
+  requiresPasswordChange: z.boolean(),
   resetPasswordToken: z.string(),
   resetPasswordExpiryTime: z.date(),
   emailVerificationToken: z.string(),
   emailVerificationExpiryTime: z.date(),
   createdAt: z.date(),
   updatedAt: z.date(),
+  anotherScope: scopeEnumSchema,
 });
 
